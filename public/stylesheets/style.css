@@ -1,0 +1,172 @@
+.nav-link-style{
+  color: grey;
+  font-size: 18px;
+}
+
+div .btn-style{
+  border-radius:100px;
+  cursor: pointer;
+  font-size: 25px;
+  padding:10px 70px 10px 70px;
+  margin-top: 20px
+}
+
+.close-btn-style{
+  margin-top: 30px;
+  margin-left: 240px
+}
+
+.btn-login-style{
+  border-radius: 20px;
+  background-color: #fe99a4;
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+}
+
+.btn-login-style:hover{
+ opacity: 0.9;
+  color: #fff;
+}
+.close-btn-style:hover{
+  opacity: 0.8;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 255px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #e8e8e8 ;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 246px; /* Same as the width of the sidenav */
+  font-size: 14px;
+  margin-right: 0px;/* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #fff;
+  min-width: 180px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+.footer-style{
+  height:200px;
+  background-color: #20435e;
+  margin-bottom: 0px;
+}
+
+.footer-style .nav li a:hover{
+  background-color: transparent;
+}
+
+.footer-bottom{
+  color: #f0f0f0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.dashboard-header{
+  background-color: #1b688c;
+  height: 200px;
+  margin: 5px;
+  border-radius: 10px
+}
+
+div .dashboard-head-link{
+  color: #fff;
+  font-size: 16px;
+
+}
+
+.icon-style{
+  margin:5px;
+  background-color: white;
+  padding: 10px;
+  font-size:100px;
+  border-radius: 20px
+}
+.dashboard-body{
+  border-bottom: 2px solid #11485f;
+  box-shadow: 0px 0px 2px 0px #005e63;
+  padding: 10px;margin: 0px;
+}
+
+.link-style{
+  font-size: 14px;
+  margin-left: 800px;
+  text-decoration: none;
+}
+
+.main-head-style{
+  text-decoration:none;
+  float:right;
+  font-size: 14px;
+  margin-right: 100px;
+  margin-top:12px;
+  cursor: pointer;
+}
+

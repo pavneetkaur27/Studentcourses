@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Eckovation</title>
+
+    <meta charset="utf-8">
+    <link rel="icon" href="" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body >
+    <div class="sidenav" style="background-color: #000 ;">
+        <h2 style="color: white">Videos</h2>
+        <% for(i=0;i<data.length;i++){%>
+        <a style="text-decoration: none"  href="/videodisplay/<%=i%>"><%=data[i].section%></a>
+        <%}%>
+    </div>
+
+    <div class="main">
+        <div style="background-color:#1b688c;color:#fff;border-bottom: 2px solid #11485f;box-shadow: 0px 0px 2px 0px #005e63;padding: 10px;width: 100%">
+            <h2><%=data[id].section%>
+                </h2>
+        </div>
+        <ul class="list-group" style="font-size: 20px">
+            <% for(j=0;j<data[id].subSection.length;j++){%>
+                <li class="list-group-item" >
+                    <a style="text-decoration: none" href="/videolectures/<%=data[id].section%>/<%=j%>"><%=data[id].subSection[j].chapterName%>
+                    </a>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+    </script>
+</body>
+</html>

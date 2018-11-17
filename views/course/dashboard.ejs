@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Eckovation</title>
+
+    <meta charset="utf-8">
+    <link rel="icon" href="" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body style="background-color: #fff ; " style="margin: 0px;padding: 0px">
+    <div class="sidenav">
+        <div class="dashboard-header">
+            <span class="fa fa-user icon-style" style="font-size: 50px" ></span>
+            <a class="dashboard-head-link" style="text-decoration: none" >
+                <strong>
+                    <%=userdetail.username%>
+                </strong>
+            </a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="dashboard-body">
+            <h2>Intro To Machine Learning
+                <a class="link-style" style="text-decoration: none">
+                    Quiz<span class="glyphicon glyphicon-triangle-bottom"></span>
+                </a>
+                <a class="dropdown main-head-style" onclick="myFunction()" class="dropbtn " style="text-decoration: none">
+                    Videos
+                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                    <div id="myDropdown" class="dropdown-content" style="font-size: 14px;float: right">
+                        <a href="/videodisplay/0" style="text-decoration: none">
+                            Lectures
+                            <strong style="background-color: green;padding: 4px;color: white">Free</strong>
+                        </a>
+                    </div>
+                </a>
+                <!--    <a class="" style="float:right;font-size: 14px;margin-right: 20px"><span class="glyphicon  glyphicon-step-backward"></span></a>-->
+            </h2>
+        </div>
+
+        <div  style="height:800px;background-image: url('/images/bgpic.png')">
+            <div class="container" style="padding: 100px">
+                <h1 class="text-center">This is a Demo App</h1>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+    </script>
+</body>
+</html>

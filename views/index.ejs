@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Eckovation</title>
+
+  <meta charset="utf-8">
+  <link rel="icon" href="" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body style="background-color: #e8e8e8 ;" data-spy="scroll" data-target=".nav-middle" data-offset="150">
+  <nav class="navbar navbar-default my-head " style="background-color: white">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#my-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <p class="navbar-brand header-style"  style="color: white; " >
+          <strong ><img src="/images/icon.png" /></strong>
+        </p>
+      </div>
+      <div class="collapse navbar-collapse nav-link-style" id="my-collapse " >
+        <ul class="nav navbar-nav navbar-right">
+          <li ><a href="" ><strong> Home</strong></a></li>
+          <li ><a href="" ><strong> Courses</strong></a></li>
+          <li ><a href="" ><strong> About Us</strong></a></li>
+          <li ><a href="" ><strong> Contact Us</strong></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+      <% if(err.length > 0) { %>
+    <div class="alert alert-warning alert-dismissible fade in" style="width: 100%;text-align: center;" >
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong><%= err %></strong>
+    </div>
+      <% } %>
+  </div>
+  <div class="container jumbotron text-center" style=" background: linear-gradient(rgba(0, 91, 234, 0.8) 50%, rgba(0, 198, 251, 0.5) 100%);color: #fff;border-radius: 10px;font-family: Bahnschrift">
+    <h1>  Introduction to Machine Learning</h1>
+    <h3>Free certification course of Machine Learning
+    </br>
+    </br>
+    </br>
+    Created By: Ritesh Singh
+    </br>
+    <b style="color: #e8ae39">
+      Course Duration : 7 Day
+    </b></h3></br>
+    <h1 style="color: #e8ae39">Free</h1>
+    <h4 style="color: #e8ae39">
+      <span class="glyphicon glyphicon-star" ></span>
+      <span class="glyphicon glyphicon-star" ></span>
+      <span class="glyphicon glyphicon-star" ></span>
+      <span class="glyphicon glyphicon-star" ></span>
+      <span class="glyphicon glyphicon-star" ></span>
+    </h4>
+    </br>
+    <h3>682 Ratings | 1786 Enrollments</h3>
+
+    <div>
+      <a class="btn btn-danger btn-style" data-toggle="modal" data-target="#formModal">Enroll</a>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="FormModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="margin-top: 80px;" >
+        <form method="post" action="/login" style="width: 100%">
+          <input type="hidden" id="form-id" name="id" />
+          <div class="modal-header" style="background-color: #367ae8;color: white;padding:50px 60px 40px 100px;">
+            <h2 class="modal-title" id="myModalLabel" >
+              <strong>Choose You Subscription</strong>
+            </h2>
+          </div>
+          <div class="modal-body" style="margin: 70px">
+            <center>
+              <a class="btn btn-danger btn-style " data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#loginModal" style="font-size: 18px;padding:5px 70px 5px 70px;">Continue</a>
+            </center>
+          </div>
+        </form>
+      </div>
+      <div class="close-btn-style">
+        <a type="button" data-dismiss="modal" aria-label="Close" style="border-radius: 30px;background-color: #fff;padding: 15px;">
+
+          <span  class="glyphicon glyphicon-remove">
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="FormModalLabel">
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content" style="margin-top: 80px">
+        <form method="post" action="/enroll" style="padding:10px 90px 20px 90px">
+          <input type="hidden" id="form-id" name="id" />
+          <div class="modal-body">
+            <div class="form-group">
+              <h3 class="modal-title" id="myModalLabel" style="color: #3785f5;text-align: center;margin-bottom: 20px"><strong>Enter Details</strong></h3>
+              <input type="text" required class="form-control" name="username" placeholder="Name" style="border-radius: 20px" />
+            </div>
+            <div class="form-group">
+              <input type="number" required  name="mobileno"  class="form-control" placeholder="Mobile Number" style="border-radius: 20px">
+            </div>
+            <div class="form-group">
+              <input type="email" required  name="email" class="form-control" placeholder="Email Id" style="border-radius: 20px">
+            </div>
+
+            <input type="submit" class="btn btn-login-style" style="border-radius: 20px;color: #fff;font-size: 18px" value="Next" />
+
+          </div>
+        </form>
+      </div>
+
+      <div class="close-btn-style">
+        <a type="button" data-dismiss="modal" aria-label="Close" style="border-radius: 30px;background-color: #fff;padding: 15px;">
+
+          <span  class="glyphicon glyphicon-remove">
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <footer class="footer-style" >
+    <div class="container" >
+        <ul class="nav navbar-nav " style="margin-top: 30px">
+          <li ><a href="" style="color: white" ><strong> Home</strong></a></li>
+          <li ><a href="" style="color: white" ><strong> Courses</strong></a></li>
+          <li ><a href="" style="color: white" ><strong> About Us</strong></a></li>
+          <li ><a href="" style="color: white" ><strong> Contact Us</strong></a></li>
+        </ul>
+
+      <hr style="margin-top: 160px">
+    <div class="footer-bottom text-center">
+
+      <p>© 2018 Eckovation Solutions Private Limited(Demo APP)<br></p>
+    </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
