@@ -3,7 +3,6 @@ var router = express.Router();
 var session = require('express-session');
 var bodyParser  = require('body-parser');
 const controllers= require('../controllers');
-var multer = require('multer');
 var path = require('path');
 var fs = require('fs');
 
