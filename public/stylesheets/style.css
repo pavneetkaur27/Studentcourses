@@ -32,8 +32,7 @@ div .btn-style{
   opacity: 0.8;
 }
 
-
-.sidenav {
+.nav-side {
   height: 100%;
   width: 255px;
   position: fixed;
@@ -45,71 +44,17 @@ div .btn-style{
   padding-top: 20px;
 }
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 246px; /* Same as the width of the sidenav */
+.main-body {
+  margin-left: 246px;
   font-size: 14px;
-  margin-right: 0px;/* Increased text to enable scrolling */
+  margin-right: 0px;
   padding: 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .nav-side {padding-top: 15px;}
+
 }
-
-
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: relative;
-  background-color: #fff;
-  min-width: 180px;
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  margin-top: 20px;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 10px 10px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
-
 
 .footer-style{
   height:200px;
@@ -170,3 +115,21 @@ div .dashboard-head-link{
   cursor: pointer;
 }
 
+.dropdown-menu li a:hover{
+ background-color: transparent;
+}
+
+.profile-pic
+{
+  height: 80px;
+  border-radius: 20%;
+  margin: 10px;
+  width: 100px;
+  position: absolute;
+  z-index: 999;
+  transition: 2s;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  -o-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}

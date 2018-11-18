@@ -44,26 +44,22 @@
 
     <div class="main-body">
         <div class="dashboard-body">
-            <h2>Intro To Machine Learning
-                <div class="dropdown" style="float: right;">
-                    <a class=" dropdown-toggle main-head-style" style="text-decoration: none"  type="button" data-toggle="dropdown">Videos
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/videodisplay/0" style="text-decoration: none">
-                                Lectures
-                                <strong style="background-color: green;padding: 4px;color: white">Free</strong>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
+            <h2>
+                Profile Settings
             </h2>
         </div>
 
-        <div  style="height:800px;background-image: url('/images/bgpic.png')">
-            <div class="container" style="padding: 100px">
-                <h1 class="text-center">This is a Demo App</h1>
-            </div>
+        <div  style="height:800px;background-color:white">
+            <h3 style="color: black">Profile Name</h3>
+            <hr>
+            <h3 style="color: black"><%=userdetail.username%></h3>
+            <form action="/editProfile/<%=userdetail._id%>" method="post" class="form-horizontal" id="form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Upload Product Photo</label>
+                    <input   name="productPhoto" type="file" class="form-control"  accept="image/*"
+                            required/>
+                </div>
+            </form>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 
 var login = mongoose.Schema({
-        username                            :String,
+        username                        :String,
         mobileno                        :String,
         email                           :String,
+        profilephoto                    :String
        },
 );
 

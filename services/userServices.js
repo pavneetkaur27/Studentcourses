@@ -12,17 +12,20 @@ var saveUser =function (user,data,callback) {
 };
 
 var finddata = function (criteria, projections, options, callback) {
-    options.lean = true;
     models.videos.find(criteria, projections, options, callback);
 }
 
 var findUser = function (criteria, projections, options, callback) {
-    options.lean = true;
     models.users.find(criteria, projections, options, callback);
+}
+
+var updateProfile = function (user,details, callback) {
+    models.users.updateOne({_id:user._id},details,callback);
 }
 
 module.exports={
     'saveUser': saveUser,
     'finddata': finddata,
-    'findUser':findUser
+    'findUser':findUser,
+    'updateProfile':updateProfile
 }
