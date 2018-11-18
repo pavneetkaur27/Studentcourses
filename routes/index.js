@@ -14,8 +14,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/enroll', function(req, res, next) {
   username = req.body.username;
-  var msg='';
-  //console.log(username);
   if (req.body.username == "" && req.body.mobileno == "" && req.body.email == "" ) {
       res.render('index', {  msg: 'No field can be empty'})
   } else {
@@ -30,18 +28,17 @@ router.post('/enroll', function(req, res, next) {
       var mailOptions = {
           from: 'pavneetdemotest@gmail.com',
           to: req.body.email,
-          subject: 'Join Eckovation course Group code',
-          text: 'Hello '+username+',</br> This is random email ..........Thanks'
+          subject: 'Eckovation course Join code',
+          html: 'Hello '+username+', <h4>Welcome To Eckovation</h4>This is random email.<h5>Thanks</h5>'
       };
 
       transporter.sendMail(mailOptions, function(error, info){
           if (error) {
               console.log(error);
           } else {
-                 msg='Email Sent to your id!;'
+              console.log('Email sent: ' + info.response);
           }
       });
-
       controllers.userControllers.findUser({username: req.body.username}, {}, {}, (err, response) => {
           if (err) {
               res.send(err);
@@ -51,7 +48,7 @@ router.post('/enroll', function(req, res, next) {
               if (response[0] != undefined) {
                   if (response[0].username == req.body.username) {
                       req.session.user = username;
-                      res.render('course/dashboard',{userdetail:response[0],message:msg});
+                      res.render('course/dashboard',{userdetail:response[0],message:"Email sent to your Id "+req.body.email});
                   }
               } else {
                   controllers.userControllers.saveUser(req.body, (err, user) => {
@@ -60,13 +57,12 @@ router.post('/enroll', function(req, res, next) {
                       }
                       else {
                           req.session.user = username;
-                          res.render('course/dashboard',{userdetail:user,message:msg});
+                          res.render('course/dashboard',{userdetail:user,message:"Email sent to your Id "+req.body.email});
                       }
                   });
               }
           }
-      })
-
+      });
   }
 });
 
@@ -125,9 +121,8 @@ router.post('/editProfile/:id',upload.single('profilePhoto'),function (req,res) 
     if(req.file!=null) {
         var allowedExtensions = [".png", ".jpg", ".jpeg"];
         var tempPath = req.file.path;
-        var filePath = "../public/Upload/Product/" + req.file.filename;
+        var filePath = "../public/Upload/" + req.file.filename;
         var targetPath = path.join(__dirname, filePath);
-        // console.log(filename+" "+ filePath);
         filename = req.file.filename;
         controllers.userControllers.updateProfile({_id: req.params.id}, {profilephoto: filename}, function (error, data) {
             if (error) {
@@ -160,8 +155,4 @@ router.get('/logout', function (req,res) {
 });
 
 
-router.get('/sendmail',function (req,res) {
-
-
-});
 module.exports = router;

@@ -17,7 +17,7 @@
     <div class="nav-side">
         <div class="dashboard-header">
 
-            <img src="../Upload/<%= userdetail.profilephoto %>" class="profile-pic ">
+            <img src="../Upload/<%= userdetail.profilephoto %>" class="profilephoto">
             </br>
 
             <div class="dropdown" style="margin-top: 70px" >
@@ -63,14 +63,14 @@
 
         <div  style="height:800px;background-image: url('/images/bgpic.png')">
             <div class="container" style="padding: 100px">
-                <h1 class="text-center">This is a Demo App</h1>
+                <h1 class="text-center">This is a Demo App.<%=message%></h1>
             </div>
         </div>
     </div>
 
-    <%if(message!=''){%>
-        alert(message);
-    <%}%>
+    <!--<%if(message!=''){%>-->
+        <!--alert(message);-->
+    <!--<%}%>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
