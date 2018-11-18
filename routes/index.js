@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/enroll', function(req, res, next) {
   username = req.body.username;
+  var msg='';
   //console.log(username);
   if (req.body.username == "" && req.body.mobileno == "" && req.body.email == "" ) {
       res.render('index', {  msg: 'No field can be empty'})
@@ -30,16 +31,17 @@ router.post('/enroll', function(req, res, next) {
           from: 'pavneetdemotest@gmail.com',
           to: req.body.email,
           subject: 'Join Eckovation course Group code',
-          text: 'This is random email ..........Thanks'
+          text: 'Hello '+username+',</br> This is random email ..........Thanks'
       };
 
       transporter.sendMail(mailOptions, function(error, info){
           if (error) {
               console.log(error);
           } else {
-              alert("sds");
+                 msg='Email Sent to your id!;'
           }
       });
+
       controllers.userControllers.findUser({username: req.body.username}, {}, {}, (err, response) => {
           if (err) {
               res.send(err);
@@ -49,7 +51,7 @@ router.post('/enroll', function(req, res, next) {
               if (response[0] != undefined) {
                   if (response[0].username == req.body.username) {
                       req.session.user = username;
-                      res.render('course/dashboard',{userdetail:response[0]});
+                      res.render('course/dashboard',{userdetail:response[0],message:msg});
                   }
               } else {
                   controllers.userControllers.saveUser(req.body, (err, user) => {
@@ -58,7 +60,7 @@ router.post('/enroll', function(req, res, next) {
                       }
                       else {
                           req.session.user = username;
-                          res.render('course/dashboard',{userdetail:user});
+                          res.render('course/dashboard',{userdetail:user,message:msg});
                       }
                   });
               }
@@ -136,7 +138,7 @@ router.post('/editProfile/:id',upload.single('profilePhoto'),function (req,res) 
                         return res.send(error);
                     } else {
                         console.log(user);
-                        res.render('course/dashboard', {userdetail: user[0]});
+                        res.render('course/dashboard', {userdetail: user[0],message:''});
                     }
                 })
 
