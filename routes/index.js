@@ -29,7 +29,7 @@ router.post('/enroll', function(req, res, next) {
           from: 'pavneetdemotest@gmail.com',
           to: req.body.email,
           subject: 'Eckovation course Join code',
-          html: 'Hello '+username+', <h4>Welcome To Eckovation</h4>This is random email.<h5>Thanks</h5>'
+          text: 'Hello '+username+', \nWelcome To Eckovation!This is random email.\nThanks'
       };
 
       transporter.sendMail(mailOptions, function(error, info){
