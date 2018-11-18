@@ -27,7 +27,7 @@ router.post('/enroll', function(req, res, next) {
       });
 
       var mailOptions = {
-          from: 'pavneetkaur2797@gmail.com',
+          from: 'pavneetdemotest@gmail.com',
           to: req.body.email,
           subject: 'Join Eckovation course Group code',
           text: 'This is random email ..........Thanks'
@@ -37,7 +37,7 @@ router.post('/enroll', function(req, res, next) {
           if (error) {
               console.log(error);
           } else {
-              console.log('Email sent: ' + info.response);
+              alert("sds");
           }
       });
       controllers.userControllers.findUser({username: req.body.username}, {}, {}, (err, response) => {

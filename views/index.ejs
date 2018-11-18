@@ -8,12 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
-<body style="background-color: #e8e8e8 ;" data-spy="scroll" data-target=".nav-middle" data-offset="150">
+<body style="background-color: #e8e8e8;">
   <nav class="navbar navbar-default my-head " style="background-color: white">
     <div class="container">
       <div class="navbar-header">
@@ -27,7 +26,7 @@
           <strong ><img src="/images/icon.png" /></strong>
         </p>
       </div>
-      <div class="collapse navbar-collapse nav-link-style" id="my-collapse " >
+      <div class="collapse navbar-collapse nav-link-style" id="my-collapse" >
         <ul class="nav navbar-nav navbar-right">
           <li ><a href="" ><strong> Home</strong></a></li>
           <li ><a href="" ><strong> Courses</strong></a></li>
@@ -75,6 +74,7 @@
 
   <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="FormModalLabel">
     <div class="modal-dialog" role="document">
+
       <div class="modal-content" style="margin-top: 80px;" >
         <form method="post" action="/login" style="width: 100%">
           <input type="hidden" id="form-id" name="id" />
@@ -85,14 +85,16 @@
           </div>
           <div class="modal-body" style="margin: 70px">
             <center>
-              <a class="btn btn-danger btn-style " data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#loginModal" style="font-size: 18px;padding:5px 70px 5px 70px;">Continue</a>
+              <a class="btn btn-danger btn-style " data-dismiss="modal" aria-label="Close"
+                 data-toggle="modal" data-target="#loginModal" style="font-size: 18px;padding:5px 60px 5px 60px;">
+                Continue</a>
             </center>
           </div>
         </form>
       </div>
+
       <div class="close-btn-style">
         <a type="button" data-dismiss="modal" aria-label="Close" style="border-radius: 30px;background-color: #fff;padding: 15px;">
-
           <span  class="glyphicon glyphicon-remove">
           </span>
         </a>
@@ -104,11 +106,11 @@
     <div class="modal-dialog" role="document">
 
       <div class="modal-content" style="margin-top: 80px">
-        <form method="post" action="/enroll" style="padding:10px 90px 20px 90px">
+        <form method="post" action="/enroll" class="form-style">
           <input type="hidden" id="form-id" name="id" />
           <div class="modal-body">
             <div class="form-group">
-              <h3 class="modal-title" id="myModalLabel" style="color: #3785f5;text-align: center;margin-bottom: 20px"><strong>Enter Details</strong></h3>
+              <h3 class="modal-title model-title-style" id="myModalLabel" ><strong>Enter Details</strong></h3>
               <input type="text" required class="form-control" name="username" placeholder="Name" style="border-radius: 20px" />
             </div>
             <div class="form-group">
@@ -117,9 +119,7 @@
             <div class="form-group">
               <input type="email" required  name="email" class="form-control" placeholder="Email Id" style="border-radius: 20px">
             </div>
-
             <input type="submit" class="btn btn-login-style" style="border-radius: 20px;color: #fff;font-size: 18px" value="Next" />
-
           </div>
         </form>
       </div>
@@ -136,8 +136,8 @@
   </div>
 
 
-  <footer class="footer-style" >
-    <div class="container" >
+  <footer class="footer-style"  >
+    <div class="container" style="background-color: #20435e">
         <ul class="nav navbar-nav " style="margin-top: 30px">
           <li ><a href="" style="color: white" ><strong> Home</strong></a></li>
           <li ><a href="" style="color: white" ><strong> Courses</strong></a></li>
@@ -145,11 +145,10 @@
           <li ><a href="" style="color: white" ><strong> Contact Us</strong></a></li>
         </ul>
 
-      <hr style="margin-top: 160px">
-    <div class="footer-bottom text-center">
-
-      <p>© 2018 Eckovation Solutions Private Limited(Demo APP)<br></p>
-    </div>
+        <hr style="margin-top: 160px">
+        <div class="footer-bottom text-center">
+          <p>© 2018 Eckovation Solutions Private Limited(Demo APP)<br></p>
+        </div>
     </div>
   </footer>
 

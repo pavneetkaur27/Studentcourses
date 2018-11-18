@@ -16,6 +16,39 @@ div .btn-style{
   margin-left: 240px
 }
 
+.model-title-style{
+  color: #3785f5;
+  text-align: center;
+  margin-bottom: 20px
+}
+
+@media (max-width: 500px){
+  .model-title-style{
+    color: #3785f5;
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+
+}
+
+@media (max-width: 500px){
+  .close-btn-style{
+    margin-top: 30px;
+    margin-left: 140px
+  }
+}
+
+.form-style{
+  padding:10px 60px 10px 60px;
+
+}
+
+@media (max-width: 500px){
+  .form-style{
+    padding:5px 5px 5px 5px;
+
+  }
+}
 .btn-login-style{
   border-radius: 20px;
   background-color: #fe99a4;
