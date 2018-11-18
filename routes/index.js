@@ -6,7 +6,7 @@ const controllers= require('../controllers');
 var path = require('path');
 var multer=require('multer')
 var fs = require('fs');
-
+var nodemailer = require('nodemailer');
 
 router.get('/', function(req, res, next) {
   res.render('index', {err:'' });
@@ -14,19 +14,42 @@ router.get('/', function(req, res, next) {
 
 router.post('/enroll', function(req, res, next) {
   username = req.body.username;
+  //console.log(username);
   if (req.body.username == "" && req.body.mobileno == "" && req.body.email == "" ) {
       res.render('index', {  msg: 'No field can be empty'})
   } else {
-      controllers.userControllers.finddata({username: req.body.username}, {username: 1}, {}, (err, response) => {
+      var transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+              user: 'pavneetdemotest@gmail.com',
+              pass: 'Pavi123@'
+          }
+      });
+
+      var mailOptions = {
+          from: 'pavneetkaur2797@gmail.com',
+          to: req.body.email,
+          subject: 'Join Eckovation course Group code',
+          text: 'This is random email ..........Thanks'
+      };
+
+      transporter.sendMail(mailOptions, function(error, info){
+          if (error) {
+              console.log(error);
+          } else {
+              console.log('Email sent: ' + info.response);
+          }
+      });
+      controllers.userControllers.findUser({username: req.body.username}, {}, {}, (err, response) => {
           if (err) {
               res.send(err);
           }
           else {
-              //console.log("hlo "+response[0]);
+              console.log("hlo "+response[0]);
               if (response[0] != undefined) {
                   if (response[0].username == req.body.username) {
                       req.session.user = username;
-                      res.render('course/dashboard',{userdetail:response});
+                      res.render('course/dashboard',{userdetail:response[0]});
                   }
               } else {
                   controllers.userControllers.saveUser(req.body, (err, user) => {
@@ -81,26 +104,45 @@ router.get('/editProfile/:id',function (req,res) {
             return res.send(error);
         }else {
             console.log(data);
-            res.render('profile', {userdetail: data});
+            res.render('profile', {userdetail: data[0]});
         }
     });
-
 });
 
-var upload = multer({
-    dest:'../public/Upload/'
+const storage =multer.diskStorage({
+    destination:"./public/Upload/",
+    filename:function (req,file,cb) {
+        cb(null,Date.now()+path.extname(file.originalname));
+    }
+})
+const upload = multer({
+    storage:storage
 });
-
 router.post('/editProfile/:id',upload.single('profilePhoto'),function (req,res) {
-    console.log(req.file);
-    // controllers.userControllers.updateProfile({_id:req.params.id},{profilephoto:},function (error,data) {
-    //     if(error){
-    //         return res.send(error);
-    //     }else {
-    //         res.render('course/dashboard',{userdetail:data});
-    //     }
-    // });
+  //  console.log(req.file);
+    if(req.file!=null) {
+        var allowedExtensions = [".png", ".jpg", ".jpeg"];
+        var tempPath = req.file.path;
+        var filePath = "../public/Upload/Product/" + req.file.filename;
+        var targetPath = path.join(__dirname, filePath);
+        // console.log(filename+" "+ filePath);
+        filename = req.file.filename;
+        controllers.userControllers.updateProfile({_id: req.params.id}, {profilephoto: filename}, function (error, data) {
+            if (error) {
+                return res.send(error);
+            } else {
+                controllers.userControllers.findUser({_id: req.params.id}, {}, {}, function (err, user) {
+                    if (err) {
+                        return res.send(error);
+                    } else {
+                        console.log(user);
+                        res.render('course/dashboard', {userdetail: user[0]});
+                    }
+                })
 
+            }
+        });
+    }
 });
 
 router.get('/logout', function (req,res) {
@@ -116,4 +158,8 @@ router.get('/logout', function (req,res) {
 });
 
 
+router.get('/sendmail',function (req,res) {
+
+
+});
 module.exports = router;

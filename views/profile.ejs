@@ -49,15 +49,18 @@
         </h2>
     </div>
 
-    <div  style="height:800px;background-color:white">
+    <div  style="height:800px;background-color:white;margin-left: 50px;width: 50%" >
         <h3 style="color: black">Profile Name</h3>
         <hr>
-        <h3 style="color: black"><%=userdetail.username%></h3>
+        <h3 style="color: #1b688c"><%=userdetail.username%></h3>
+        </br>
+        </br>
         <form action="/editProfile/<%=userdetail._id%>" method="post" class="form-horizontal" id="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Upload Product Photo</label>
-                <input   name="productPhoto" type="file" class="form-control"  accept="image/*"
+                <input   name="profilePhoto" type="file" class="form-control"  accept="image/*"
                          required/>
+                <input type="submit" class="btn btn-primary " style="margin-top: 5px" value="Update" />
             </div>
         </form>
     </div>
